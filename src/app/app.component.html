@@ -1,0 +1,94 @@
+<!-- Left Panel -->
+
+<app-navigation *ngIf="!hasRoute('login')"></app-navigation>
+<!-- /#left-panel -->
+
+<!-- Right Panel -->
+
+<div
+  id="right-panel"
+  style="position: fixed; top: 0; left: 21%; width: 80%"
+  class="right-panel"
+  *ngIf="!hasRoute('login')"
+>
+  <!-- Header-->
+  <header id="header" class="header">
+    <div class="header-menu">
+      <div class="col-sm-7">
+        <div class="header-left">
+          <app-search-bar></app-search-bar>
+          <app-shortcut-menu></app-shortcut-menu>
+          <!--<app-messages></app-messages>-->
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <app-user-profile-menu></app-user-profile-menu>
+
+        <!--<app-language-menu></app-language-menu>-->
+      </div>
+    </div>
+  </header>
+  <!-- /header -->
+  <!-- Header-->
+
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-md-12">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+    <!-- .animated -->
+  </div>
+  <!-- .content -->
+</div>
+<!-- /#right-panel -->
+
+<app-login *ngIf="hasRoute('login')"></app-login>
+
+<!-- Right Panel -->
+<script defer src="../assets/vendors/jquery/dist/jquery.min.js"></script>
+<script defer src="../assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script
+  defer
+  src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"
+></script>
+<script defer src="../assets/js/main.js"></script>
+
+<script
+  defer
+  src="../assets/vendors/datatables.net/js/jquery.dataTables.min.js"
+></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
+></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"
+></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"
+></script>
+<script defer src="../assets/vendors/jszip/dist/jszip.min.js"></script>
+<script defer src="../assets/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script defer src="../assets/vendors/pdfmake/build/vfs_fonts.js"></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"
+></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-buttons/js/buttons.print.min.js"
+></script>
+<script
+  defer
+  src="../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js"
+></script>
+<script
+  defer
+  src="../assets/js/init-scripts/data-table/datatables-init.js"
+></script>
+<script defer src="../assets/js/notification.js"></script>

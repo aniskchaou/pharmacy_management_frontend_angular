@@ -1,0 +1,177 @@
+<form class="form-vertical" id="insert_customer" accept-charset="utf-8" novalidate="novalidate"
+    [formGroup]="clientForm">
+
+    <div class="panel-body">
+        <div class="col-sm-6">
+
+
+            <div class="form-group row">
+                <label for="customer_name" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Nom du client </font>
+                    </font><i class="text-danger">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">*</font>
+                        </font>
+                    </i>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.customer_name.errors }"
+                        formControlName="customer_name" class="form-control" name="customer_name" id="customer_name"
+                        type="text" placeholder="Nom du client" required="" tabindex="1" aria-required="true">
+
+                    <div *ngIf="submitted && f.customer_name.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.customer_name.errors.required">
+                            {{msg.validationMessage.customer_name}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Email client</font>
+                    </font>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email"
+                        class="form-control" name="email" id="email" type="email" placeholder="Email client"
+                        tabindex="2">
+
+                    <div *ngIf="submitted && f.email.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.email.errors.required">
+                            {{msg.validationMessage.email}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label for="mobile" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Mobile client </font>
+                    </font><i class="text-danger">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">*</font>
+                        </font>
+                    </i>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" formControlName="mobile"
+                        class="form-control" name="mobile" id="mobile" type="number" placeholder="Mobile client" min="0"
+                        tabindex="3" required="" aria-required="true">
+
+                    <div *ngIf="submitted && f.mobile.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.mobile.errors.required">
+                            {{msg.validationMessage.mobile}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="phone" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Téléphone </font>
+                    </font><i class="text-danger"></i>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone"
+                        class="form-control" name="phone" id="phone" type="number" placeholder="Téléphone" min="0"
+                        tabindex="2">
+
+                    <div *ngIf="submitted && f.phone.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.phone.errors.required">
+                            {{msg.validationMessage.phone}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-sm-6">
+
+            <div class="form-group row">
+                <label for="city" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Ville </font>
+                    </font><i class="text-danger"></i>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.city.errors }" formControlName="city"
+                        class="form-control" name="city" id="city" type="text" placeholder="Ville">
+
+                    <div *ngIf="submitted && f.city.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.city.errors.required">
+                            {{msg.validationMessage.city}}</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label for="zip" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Code postal </font>
+                    </font><i class="text-danger"></i>
+                </label>
+                <div class="col-sm-8">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.zip.errors }" formControlName="zip"
+                        class="form-control" name="zip" id="zip" type="text" placeholder="Code postal">
+
+                    <div *ngIf="submitted && f.zip.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.zip.errors.required">
+                            {{msg.validationMessage.zip}}</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="country" class="col-sm-4 col-form-label">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Pays </font>
+                    </font><i class="text-danger"></i>
+                </label>
+                <div class="col-sm-8">
+                    <select name="country" class="form-control select2-hidden-accessible" tabindex="-1"
+                        aria-hidden="true">
+                        <option value="Afghanistan">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">France</font>
+                            </font>
+                        </option>
+
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-8">
+            <button (click)="add()" type="button" class="btn btn-info">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </button>
+            <button (click)="reset()" type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i>
+                Annuler
+            </button>
+        </div>
+
+
+    </div>
+</form>

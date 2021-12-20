@@ -1,0 +1,49 @@
+<table
+  id="bootstrap-data-table-export"
+  class="table table-striped table-bordered"
+>
+  <thead>
+    <tr>
+      <th>No facture</th>
+      <th>Nom fabricant</th>
+      <th>Date</th>
+      <th>Montant</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7G78T7</td>
+      <td>Sanofi</td>
+      <td>23/1/20202</td>
+      <td>123$</td>
+      <td>
+        <button
+          data-toggle="modal"
+          data-target="#editBuy"
+          type="button"
+          (click)="edit(1)"
+          class="btn btn-warning btn-sm"
+        >
+          <i class="fas fa-edit"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm"
+          onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"
+        >
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>No facture</th>
+      <th>Nom fabricant</th>
+      <th>Date</th>
+      <th>Montant</th>
+      <th>Actions</th>
+    </tr>
+  </tfoot>
+</table>

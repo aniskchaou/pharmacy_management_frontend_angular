@@ -1,0 +1,55 @@
+<table
+  id="bootstrap-data-table-export"
+  class="table table-striped table-bordered"
+>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Nom genetique</th>
+      <th>Categorie</th>
+      <th>Fabricant</th>
+      <th>Etagiere</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of medicaments">
+      <td>{{ item.product_name }}</td>
+      <td>{{ item.generic_name }}</td>
+      <td>{{ item.category_id }}</td>
+      <td>{{ item.manufacter_id }}</td>
+      <td>{{ item.product_location }}</td>
+      <td>{{ item.price }} $</td>
+      <td>
+        <button
+          data-toggle="modal"
+          data-target="#editMedicament"
+          (click)="edit(item.id)"
+          type="button"
+          class="btn btn-warning btn-sm"
+        >
+          <i class="fas fa-edit"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm"
+          (click)="delete(item.id)"
+        >
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Nom</th>
+      <th>Nom genetique</th>
+      <th>Categorie</th>
+      <th>Fabricant</th>
+      <th>Etagiere</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </tfoot>
+</table>

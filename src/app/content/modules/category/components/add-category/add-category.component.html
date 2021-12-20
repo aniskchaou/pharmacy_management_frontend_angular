@@ -1,0 +1,64 @@
+<form
+  class="form-vertical"
+  id="insert_category"
+  method="post"
+  accept-charset="utf-8"
+  novalidate="novalidate"
+  [formGroup]="categoryForm"
+>
+  <div class="form-group row">
+    <label for="category_name" class="col-sm-3 col-form-label">
+      <font style="vertical-align: inherit">
+        <font style="vertical-align: inherit">Nom de la catégorie </font> </font
+      ><i class="text-danger">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">*</font>
+        </font>
+      </i>
+    </label>
+    <div class="col-sm-6">
+      <input
+        [ngClass]="{ 'is-invalid': submitted && f.category_name.errors }"
+        formControlName="category_name"
+        class="form-control"
+        name="category_name"
+        id="category_name"
+        type="text"
+        placeholder="Nom de catégorie"
+        required=""
+        aria-required="true"
+      />
+
+      <div
+        *ngIf="submitted && f.category_name.errors"
+        class="alert alert-danger"
+      >
+        <div *ngIf="submitted && f.category_name.errors.required">
+          {{ msg.validationMessage.category_name }}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <input type="file" (change)="onFileChanged($event)" />
+    </div>
+
+    <div *ngIf="retrievedImage">
+      <img [src]="retrievedImage" />
+    </div>
+    <!-- <div *ngIf="imageName">
+      <input type="hidden" name="imageName" [value]="imageName" />
+    </div>-->
+
+    <div class="col-sm-8">
+      <button (click)="add()" type="button" class="btn btn-info">
+        <i class="fas fa-save"></i>
+        Sauvegarder
+      </button>
+      <button (click)="reset()" type="button" class="btn btn-danger">
+        <i class="fas fa-times"></i>
+        Annuler
+      </button>
+    </div>
+  </div>
+</form>

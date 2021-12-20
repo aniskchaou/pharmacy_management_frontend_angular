@@ -1,0 +1,79 @@
+<form id="insert_supplier" enctype="multipart/form-data" method="post" accept-charset="utf-8" novalidate="novalidate">
+
+    <div class="panel-body">
+
+        <div class="form-group row">
+            <label for="supplier_name" class="col-sm-3 col-form-label">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Nom du fournisseur </font>
+                </font><i class="text-danger">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">*</font>
+                    </font>
+                </i>
+            </label>
+            <div class="col-sm-6">
+                <input [(ngModel)]="model.supplier_name" value="{{model.supplier_name}}" class="form-control"
+                    name="supplier_name" id="supplier_name" type="text" placeholder="Nom du fournisseur" required=""
+                    tabindex="1" aria-required="true">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="mobile" class="col-sm-3 col-form-label">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Mobile fournisseur </font>
+                </font><i class="text-danger"></i>
+            </label>
+            <div class="col-sm-6">
+                <input [(ngModel)]="model.mobile" value="{{model.mobile}}" class="form-control" name="mobile"
+                    id="mobile" type="number" placeholder="Mobile fournisseur" min="0" tabindex="2">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="address " class="col-sm-3 col-form-label">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Adresse du fournisseur</font>
+                </font>
+            </label>
+            <div class="col-sm-6">
+                <textarea [(ngModel)]="model.address" value="{{model.address}}" class="form-control" name="address"
+                    id="address " rows="3" placeholder="Adresse du fournisseur" tabindex="3"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="details" class="col-sm-3 col-form-label">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Détails du fournisseur</font>
+                </font>
+            </label>
+            <div class="col-sm-6">
+                <textarea [(ngModel)]="model.details" value="{{model.details}}" class="form-control" name="details"
+                    id="details" rows="3" placeholder="Détails du fournisseur" tabindex="4"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="details" class="col-sm-3 col-form-label">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Solde précédent</font>
+                </font>
+            </label>
+            <div class="col-sm-6">
+                <input [(ngModel)]="model.previous_balance" value="{{model.previous_balance}}" type="number"
+                    class="form-control" name="previous_balance" placeholder="Solde précédent" tabindex="5">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-text-input" class="col-sm-4 col-form-label"></label>
+            <div class="col-sm-6">
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

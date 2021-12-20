@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-header">
+    <strong class="card-title">Achats</strong>
+  </div>
+  <div class="card-body">
+    <div *ngIf="loading; else loaded">
+      <app-loading></app-loading>
+    </div>
+    <!--<app-add-button [itemI18n]="buyI18n"></app-add-button>-->
+    <ng-template #loaded>
+      <app-buy-list
+        (editEvent)="edit($event)"
+        (deleteEvent)="delete($event)"
+        [buys]="buys$"
+        [buyI18n]="buyI18n"
+      ></app-buy-list>
+      <!--  <app-modal-buy></app-modal-buy>-->
+    </ng-template>
+  </div>
+</div>
+
+<!--
+<div class="container-fluid">
+  <div *ngIf="loading; else loaded">
+    <app-loading></app-loading>
+  </div>
+
+  <ng-template #loaded>
+    <h1 class="h3 mb-2 text-gray-800">{{ categoryI18n?.allTitleI18n }}</h1>
+
+    
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        
+        <app-add-button [itemI18n]="categoryI18n"></app-add-button>
+
+        <div class="table-responsive">
+        
+          <app-category-list
+            (editEvent)="edit($event)"
+            (deleteEvent)="delete($event)"
+            [categories]="categorys$"
+            [categoryI18n]="categoryI18n"
+          ></app-category-list>
+
+          
+          <app-modal-category
+            [categoryI18n]="categoryI18n"
+            [id]="id"
+          ></app-modal-category>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>-->

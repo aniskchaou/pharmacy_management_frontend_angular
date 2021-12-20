@@ -1,0 +1,49 @@
+<table
+  id="bootstrap-data-table-export"
+  class="table table-striped table-bordered"
+>
+  <thead>
+    <tr>
+      <th>Nom client</th>
+      <th>Ville</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clients">
+      <td>{{ item.customer_name }}</td>
+      <td>{{ item.city }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button
+          (click)="edit(item.id)"
+          type="button"
+          data-toggle="modal"
+          data-target="#editClient"
+          class="btn btn-warning btn-sm"
+        >
+          <i class="fas fa-edit"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm"
+          (click)="delete(item.id)"
+        >
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Nom client</th>
+      <th>Ville</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </tfoot>
+</table>
